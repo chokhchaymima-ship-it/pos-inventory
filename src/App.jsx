@@ -99,7 +99,7 @@ const initialProducts = [
     stock: 6,
     initialStock: 18,
     isAvailable: true,
-    image: './images/milktea.jpg'
+    image: './images/boba-milktea.jpg?v=2'
   }
 ];
 
