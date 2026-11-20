@@ -29,7 +29,7 @@ const initialProducts = [
     stock: 15,
     initialStock: 20,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80'
+    image: './images/coffee.jpg'
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const initialProducts = [
     stock: 4, // Low stock (< 5)
     initialStock: 20,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=600&q=80'
+    image: './images/matcha.jpg'
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const initialProducts = [
     stock: 8,
     initialStock: 15,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80'
+    image: './images/croissant.jpg'
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const initialProducts = [
     stock: 3, // Low stock (< 5)
     initialStock: 15,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80'
+    image: './images/cake.jpg'
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ const initialProducts = [
     stock: 12,
     initialStock: 20,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80'
+    image: './images/yuzu.jpg'
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ const initialProducts = [
     stock: 2, // Low stock (< 5)
     initialStock: 12,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80'
+    image: './images/sandwich.jpg'
   },
   {
     id: 7,
@@ -89,7 +89,7 @@ const initialProducts = [
     stock: 10,
     initialStock: 20,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80'
+    image: './images/cookie.jpg'
   },
   {
     id: 8,
@@ -99,7 +99,7 @@ const initialProducts = [
     stock: 6,
     initialStock: 18,
     isAvailable: true,
-    image: 'https://images.unsplash.com/photo-1558857563-b37cf5a886f4?auto=format&fit=crop&w=600&q=80'
+    image: './images/milktea.jpg'
   }
 ];
 
@@ -116,7 +116,7 @@ export default function App() {
   const [discountInput, setDiscountInput] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState(null);
   const [cashReceived, setCashReceived] = useState('');
-  
+
   // Feedback Snackbar state
   const [snackbar, setSnackbar] = useState({
     open: false,
@@ -348,7 +348,7 @@ export default function App() {
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', bgcolor: '#f4f6f8' }}>
-      
+
       {/* Navigation & Header */}
       <AppBar position="sticky" sx={{ bgcolor: '#0f172a', boxShadow: 3 }}>
         <Container maxWidth="xl">
@@ -401,7 +401,7 @@ export default function App() {
       {/* Main Layout Container */}
       <Container maxWidth="xl" sx={{ mt: 3, mb: 5, flexGrow: 1 }}>
         <Grid container spacing={3}>
-          
+
           {/* Left Column: Product Catalog & Inventory Control */}
           <Grid item xs={12} lg={7} xl={8}>
             <Paper elevation={0} sx={{ p: 2.5, mb: 3, borderRadius: 3, bgcolor: '#ffffff', border: '1px solid #e2e8f0' }}>
@@ -516,7 +516,7 @@ export default function App() {
                         <Typography variant="subtitle1" sx={{ fontWeight: 600, minHeight: '3rem', lineHeight: 1.3 }}>
                           {product.name}
                         </Typography>
-                        
+
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', mt: 1, mb: 1.5 }}>
                           <Typography variant="h5" sx={{ fontWeight: 700, color: '#2563eb' }}>
                             ฿{product.price.toFixed(2)}
@@ -940,7 +940,7 @@ export default function App() {
 
               <Divider sx={{ borderStyle: 'dashed', my: 2 }} />
               <Typography variant="caption" sx={{ display: 'block', textAlign: 'center', color: '#94a3b8' }}>
-                *** ขอบคุณที่ใช้บริการ ***<br/>
+                *** ขอบคุณที่ใช้บริการ ***<br />
                 (ตัดสต็อกสินค้าในระบบเรียลไทม์แล้ว)
               </Typography>
             </Box>
