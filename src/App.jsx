@@ -19,11 +19,11 @@ import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import PrintIcon from '@mui/icons-material/Print';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
-// Initial mock product data
+// Initial mock product data (Clean Thai names)
 const initialProducts = [
   {
     id: 1,
-    name: 'กาแฟอาราบิกาคั่วสด (Arabica Coffee)',
+    name: 'กาแฟอาราบิกาคั่วสด',
     category: 'เครื่องดื่ม',
     price: 65,
     stock: 15,
@@ -33,7 +33,7 @@ const initialProducts = [
   },
   {
     id: 2,
-    name: 'ชาเขียวมัทฉะพรีเมียม (Matcha Latte)',
+    name: 'ชาเขียวมัทฉะพรีเมียม',
     category: 'เครื่องดื่ม',
     price: 70,
     stock: 4, // Low stock (< 5)
@@ -43,7 +43,7 @@ const initialProducts = [
   },
   {
     id: 3,
-    name: 'ครัวซองต์เนยสดฝรั่งเศส (Butter Croissant)',
+    name: 'ครัวซองต์เนยสดฝรั่งเศส',
     category: 'เบเกอรี่',
     price: 55,
     stock: 8,
@@ -53,7 +53,7 @@ const initialProducts = [
   },
   {
     id: 4,
-    name: 'เค้กช็อกโกแลตฟัดจ์ (Chocolate Fudge)',
+    name: 'เค้กช็อกโกแลตฟัดจ์',
     category: 'เบเกอรี่',
     price: 85,
     stock: 3, // Low stock (< 5)
@@ -63,7 +63,7 @@ const initialProducts = [
   },
   {
     id: 5,
-    name: 'น้ำส้มยูซุสปาร์คกลิ้ง (Yuzu Sparkling)',
+    name: 'น้ำส้มยูซุสปาร์คกลิ้ง',
     category: 'เครื่องดื่ม',
     price: 60,
     stock: 12,
@@ -73,7 +73,7 @@ const initialProducts = [
   },
   {
     id: 6,
-    name: 'แซนด์วิชแฮมชีสโทสต์ (Ham Cheese Toast)',
+    name: 'แซนด์วิชแฮมชีสโทสต์',
     category: 'อาหารว่าง',
     price: 45,
     stock: 2, // Low stock (< 5)
@@ -83,7 +83,7 @@ const initialProducts = [
   },
   {
     id: 7,
-    name: 'คุกกี้ข้าวโอ๊ตช็อกโกแลตชิพ (Oatmeal Cookie)',
+    name: 'คุกกี้ข้าวโอ๊ตช็อกโกแลตชิพ',
     category: 'เบเกอรี่',
     price: 40,
     stock: 10,
@@ -93,7 +93,7 @@ const initialProducts = [
   },
   {
     id: 8,
-    name: 'ชานมไต้หวันพ่นไฟ (Brown Sugar Milk Tea)',
+    name: 'ชานมไต้หวันพ่นไฟ',
     category: 'เครื่องดื่ม',
     price: 65,
     stock: 6,
@@ -349,7 +349,7 @@ export default function App() {
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', bgcolor: '#f4f6f8' }}>
       
-      {/* 3. Navigation & Header: AppBar, Toolbar, Badge */}
+      {/* Navigation & Header */}
       <AppBar position="sticky" sx={{ bgcolor: '#0f172a', boxShadow: 3 }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
@@ -373,7 +373,7 @@ export default function App() {
                   ระบบบริหารจัดการคำสั่งซื้อและคลังสินค้าหน้าร้าน
                 </Typography>
                 <Typography variant="caption" sx={{ color: '#94a3b8' }}>
-                  Point of Sale and Inventory Management System (งานที่ 2)
+                  ระบบคิดเงินหน้าร้านและตัดสต็อกสินค้าอัตโนมัติ (งานที่ 2)
                 </Typography>
               </Box>
             </Box>
@@ -408,7 +408,7 @@ export default function App() {
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
                 <Box>
                   <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a' }}>
-                    รายการสินค้าในคลังหน้าร้าน (Product Catalog)
+                    รายการสินค้าในคลังหน้าร้าน
                   </Typography>
                   <Typography variant="body2" sx={{ color: '#64748b' }}>
                     แสดงรายการสินค้า สต็อกคงเหลือ และควบคุมการจำหน่าย
@@ -425,7 +425,7 @@ export default function App() {
               </Box>
             </Paper>
 
-            {/* 3. Data Presentation: Card, CardMedia, CardContent, CardActions */}
+            {/* Data Presentation: Card, CardMedia, CardContent, CardActions */}
             <Grid container spacing={2.5}>
               {products.map((product) => {
                 const isLowStock = product.stock < 5 && product.stock > 0;
@@ -526,7 +526,7 @@ export default function App() {
                           </Typography>
                         </Box>
 
-                        {/* 3. Feedback: LinearProgress (แสดงสัดส่วนสต็อกสินค้าคงเหลือ) */}
+                        {/* Feedback: LinearProgress */}
                         <Box sx={{ mt: 1 }}>
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                             <Typography variant="caption" sx={{ color: '#64748b' }}>
@@ -547,7 +547,7 @@ export default function App() {
 
                       <Divider />
 
-                      {/* 3. Inputs & Controls: Switch (เปิด/ปิดสถานะการขาย) & CardActions */}
+                      {/* Inputs & Controls: Switch & CardActions */}
                       <CardActions sx={{ p: 1.5, justifyContent: 'space-between' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                           <Switch
@@ -600,9 +600,9 @@ export default function App() {
             >
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <PointOfSaleIcon sx={{ color: '#2563eb' }} />
+                  <ShoppingCartIcon sx={{ color: '#2563eb' }} />
                   <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a' }}>
-                    ตะกร้าสินค้า (Order Cart)
+                    ตะกร้าสินค้า
                   </Typography>
                 </Box>
                 {cart.length > 0 && (
@@ -618,7 +618,7 @@ export default function App() {
                 )}
               </Box>
 
-              {/* 3. Data Presentation: Table, TableHead, TableRow, TableCell (ตารางรายการในตะกร้า) */}
+              {/* Data Presentation: Table */}
               <TableContainer sx={{ maxHeight: 280, mb: 2, border: '1px solid #f1f5f9', borderRadius: 2 }}>
                 <Table size="small" stickyHeader>
                   <TableHead>
@@ -649,7 +649,7 @@ export default function App() {
                             </Typography>
                           </TableCell>
                           <TableCell align="center" sx={{ py: 1 }}>
-                            {/* 3. Inputs & Controls: IconButton (เพิ่ม/ลด/ลบ รายการสินค้า) */}
+                            {/* Inputs & Controls: IconButton */}
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                               <IconButton
                                 size="small"
@@ -692,13 +692,13 @@ export default function App() {
                 </Table>
               </TableContainer>
 
-              {/* 3. Inputs & Controls: TextField (ช่องใส่โค้ดส่วนลด) */}
+              {/* Inputs & Controls: TextField */}
               <Box sx={{ mb: 2 }}>
                 <Box sx={{ display: 'flex', gap: 1 }}>
                   <TextField
                     fullWidth
                     size="small"
-                    label="โค้ดส่วนลด (Discount Code)"
+                    label="โค้ดส่วนลด"
                     placeholder="DISCOUNT10 / DISCOUNT20 / SAVE50"
                     value={discountInput}
                     onChange={(e) => setDiscountInput(e.target.value)}
@@ -725,17 +725,17 @@ export default function App() {
                   />
                 )}
                 <Typography variant="caption" sx={{ color: '#94a3b8', mt: 0.5, display: 'block' }}>
-                  ทดลองใช้โค้ด: DISCOUNT10 (10%), DISCOUNT20 (20%), SAVE50 (ลด 50฿)
+                  ทดลองใช้โค้ด: DISCOUNT10 (ลด 10%), DISCOUNT20 (ลด 20%), SAVE50 (ลด 50 บาท)
                 </Typography>
               </Box>
 
               <Divider sx={{ my: 1.5 }} />
 
-              {/* 2. การคำนวณคำสั่งซื้อและส่วนลด (Transaction Calculation) */}
+              {/* Calculations */}
               <Box sx={{ bgcolor: '#f8fafc', p: 2, borderRadius: 2, mb: 2 }}>
                 <Stack spacing={1}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="body2" sx={{ color: '#64748b' }}>ราคารวม (Subtotal):</Typography>
+                    <Typography variant="body2" sx={{ color: '#64748b' }}>ราคารวม:</Typography>
                     <Typography variant="body2" sx={{ fontWeight: 600 }}>฿{subtotal.toFixed(2)}</Typography>
                   </Box>
                   {appliedDiscount && (
@@ -745,24 +745,24 @@ export default function App() {
                     </Box>
                   )}
                   <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography variant="body2" sx={{ color: '#64748b' }}>ภาษีมูลค่าเพิ่ม VAT 7%:</Typography>
+                    <Typography variant="body2" sx={{ color: '#64748b' }}>ภาษีมูลค่าเพิ่ม (VAT 7%):</Typography>
                     <Typography variant="body2" sx={{ fontWeight: 600 }}>฿{vatAmount.toFixed(2)}</Typography>
                   </Box>
                   <Divider />
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a' }}>ยอดสุทธิ (Total):</Typography>
+                    <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a' }}>ยอดสุทธิ:</Typography>
                     <Typography variant="h5" sx={{ fontWeight: 800, color: '#2563eb' }}>฿{grandTotal.toFixed(2)}</Typography>
                   </Box>
                 </Stack>
               </Box>
 
-              {/* 3. Inputs & Controls: TextField (จำนวนเงินที่รับ) */}
+              {/* Inputs & Controls: TextField */}
               <Box sx={{ mb: 2 }}>
                 <TextField
                   fullWidth
                   size="small"
                   type="number"
-                  label="จำนวนเงินที่รับ (Cash Received)"
+                  label="จำนวนเงินที่รับ"
                   placeholder="ระบุจำนวนเงินที่ลูกค้าชำระ"
                   value={cashReceived}
                   onChange={(e) => setCashReceived(e.target.value)}
@@ -800,7 +800,7 @@ export default function App() {
               <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isPaymentSufficient ? '#ecfdf5' : '#f8fafc', border: isPaymentSufficient ? '1px solid #6ee7b7' : '1px solid #e2e8f0' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <Typography variant="subtitle2" sx={{ fontWeight: 700, color: isPaymentSufficient ? '#065f46' : '#64748b' }}>
-                    เงินทอน (Change):
+                    เงินทอน:
                   </Typography>
                   <Typography variant="h6" sx={{ fontWeight: 800, color: isPaymentSufficient ? '#059669' : '#94a3b8' }}>
                     ฿{changeAmount.toFixed(2)}
@@ -835,7 +835,7 @@ export default function App() {
         </Grid>
       </Container>
 
-      {/* 3. Feedback: Snackbar (แจ้งเตือนเมื่อเพิ่มสินค้าลงตะกร้าสำเร็จ / ทำรายการสำเร็จ) */}
+      {/* Feedback: Snackbar */}
       <Snackbar
         open={snackbar.open}
         autoHideDuration={2500}
@@ -852,7 +852,7 @@ export default function App() {
         </Alert>
       </Snackbar>
 
-      {/* 2 & 3. Dialog: ใบเสร็จรับเงินย่อ (Short Receipt) with Table, TableHead, TableRow, TableCell */}
+      {/* Dialog: ใบเสร็จรับเงินย่อ */}
       <Dialog
         open={receiptOpen}
         onClose={() => setReceiptOpen(false)}
@@ -864,7 +864,7 @@ export default function App() {
           <CheckCircleIcon sx={{ fontSize: 44, color: '#10b981', display: 'block', margin: '0 auto 4px' }} />
           <Typography variant="h6" sx={{ fontWeight: 800 }}>ใบเสร็จรับเงินย่อ</Typography>
           <Typography variant="caption" sx={{ color: '#64748b', display: 'block' }}>
-            ร้านสะดวกซื้อ POS สาขาหลัก (Point of Sale)
+            ร้านค้าปลีก สาขาหลัก
           </Typography>
         </DialogTitle>
 
@@ -925,15 +925,15 @@ export default function App() {
                 </Box>
                 <Divider sx={{ my: 0.5 }} />
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', fontWeight: 800, fontSize: '1rem', color: '#0f172a' }}>
-                  <span>ยอดสุทธิ (Total):</span>
+                  <span>ยอดสุทธิ:</span>
                   <span>฿{completedOrder.grandTotal.toFixed(2)}</span>
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', color: '#475569' }}>
-                  <span>รับเงินสด (Cash):</span>
+                  <span>รับเงินสด:</span>
                   <span>฿{completedOrder.cashReceived.toFixed(2)}</span>
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, color: '#059669' }}>
-                  <span>เงินทอน (Change):</span>
+                  <span>เงินทอน:</span>
                   <span>฿{completedOrder.changeAmount.toFixed(2)}</span>
                 </Box>
               </Stack>
@@ -970,4 +970,3 @@ export default function App() {
     </Box>
   );
 }
-
